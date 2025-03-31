@@ -122,9 +122,30 @@ public void onViolation(DolphinViolationEvent event) {
 }
 ```
 
-## Contributions
-If you wish to contribute to the development of this API, you can open a pull request or report issues in the project repository.
+### `DolphinBedrockViolationEvent`
+This event is triggered when a player using Bedrock Edition violates an anti-cheat check.
 
-## License
-This project is distributed under the MIT license. Refer to the `LICENSE` file for more information.
+#### Event Details:
+- `Player getPlayer()`: Returns the Bedrock player involved in the violation.
+- `String getCheckName()`: Retrieves the name of the check that was triggered.
+- `String getCheckType()`: Retrieves the type of check that was triggered.
+- `String getCategory()`: Retrieves the category of the violation.
+- `String getDebug()`: Retrieves debug information related to the violation.
+- `String getDescription()`: Retrieves a description of the violation.
+- `int getViolation()`: Retrieves the violation level.
+- `void setCancelled(boolean cancelled)`: Allows cancellation of the violation action.
 
+#### Example Usage:
+```java
+@EventHandler
+public void onBedrockViolation(DolphinBedrockViolationEvent event) {
+    Player player = event.getPlayer();
+    String checkName = event.getCheckName();
+
+    player.sendMessage("Warning: Bedrock player triggered " + checkName);
+
+    if (event.getViolation() > 3) {
+        event.setCancelled(true);
+        player.sendMessage("Your action has been blocked due to high violation level.");
+    }
+}
