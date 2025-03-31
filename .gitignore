@@ -1,0 +1,61 @@
+# IntelliJ IDEA generated files and directories
+.idea/
+*.iml
+*.iws
+out/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/vcs.xml
+.idea/.idea/
+.idea/.idea_modules/
+.idea/assetWizard.xml
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/dynamic.xml
+.idea/jsLibraryMappings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/sonarlint/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Build files
+/build/
+/out/
+/target/
+*.class
+*.jar
+*.war
+*.ear
+*.exe
+*.dll
+*.log
+*.tmp
+
+# Maven and Gradle configuration files
+/.mvn/
+/.gradle/
+build/
+
+# IntelliJ temporary files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Compiler-generated files
+target/
+bin/
+
+# Version control specific files
+.vscode/
+*.log
+*.lock
+*.tmp
+*.bak
+*.swp
+*~.nib
