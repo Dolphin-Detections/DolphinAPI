@@ -1,6 +1,7 @@
+
 # DolphinAPI - Official Documentation
 
-DolphinAPI is an interface designed to provide access and control over the Dolphin AntiCheat system. This API allows you to manage cheat detection checks, retrieve player performance metrics, and handle events related to sanctions and violations.
+**DolphinAPI** is an interface designed to provide access and control over the Dolphin AntiCheat system. This API allows you to manage cheat detection checks, retrieve player performance metrics, and handle events related to sanctions and violations. It also includes features for detecting and managing Bedrock players.
 
 ## Installation
 To integrate DolphinAPI into your project, follow these steps:
@@ -17,15 +18,14 @@ DolphinAPI.setAnticheatEnabled(true);
 
 ### Retrieving Player Latency
 ```java
-int transactionPing = DolphinAPI.getTransactionPing(player);
-int keepAlivePing = DolphinAPI.getKeepAlivePing(player);
+int ping = DolphinAPI.getPing(player);
 boolean lagging = DolphinAPI.isLagging(player);
 ```
 
 ### Configuring Checks
 ```java
-DolphinAPI.setCheckState("Fly", true);
-DolphinAPI.setCheckState("Speed", "Movement", false);
+DolphinAPI.setCheckEnabled("Fly", true);
+DolphinAPI.setCheckEnabled("Speed", "Movement", false);
 ```
 
 ### Reloading Configuration
@@ -35,33 +35,45 @@ DolphinAPI.reloadConfig();
 
 ### Version Information
 ```java
-String pluginVersion = DolphinAPI.getVersion();
+String pluginVersion = DolphinAPI.getPluginVersion();
 String serverVersion = DolphinAPI.getServerVersion();
 ```
 
 ### Managing Exemptions
 ```java
-DolphinAPI.exemptPlayer(player, 200);
-DolphinAPI.resetExempt(player);
+DolphinAPI.exemptPlayer(player, 200);  // Exempt player for 200 ticks
+DolphinAPI.resetExempt(player);  // Reset exemptions for the player
 ```
 
 ### Cloud-Based Queries
 ```java
-List<String> bans = DolphinAPI.getBanwaveFromCloud();
-Map<String, Integer> logs = DolphinAPI.getLogsFromCloud(player.getUniqueId().toString());
-Optional<String> banInfo = DolphinAPI.getBanInformation("ban123");
+List<String> bans = DolphinAPI.getBanwave();
+Map<String, Integer> logs = DolphinAPI.getPlayerLogs(player.getUniqueId().toString());
+Optional<String> banInfo = DolphinAPI.getBanInfo("ban123");
 ```
 
 ### Executing Specific Triggers
 ```java
-DolphinAPI.callSpecificTrigger(12345L, player);
-DolphinAPI.callSpecificTrigger(67890L);
+DolphinAPI.triggerForPlayer(12345L, player);
+DolphinAPI.triggerGlobal(67890L);
 ```
 
 ### Notification and Alert Settings
 ```java
-DolphinAPI.setNotificationState(player, true);
-DolphinAPI.setAlertState(player, false);
+DolphinAPI.setPlayerNotifications(player, true);
+DolphinAPI.setPlayerAlerts(player, false);
+```
+
+### Bedrock Support
+
+#### Checking if a Player is on Bedrock
+```java
+boolean isBedrock = DolphinAPI.isBedrockPlayer(player);
+```
+
+#### Retrieving Bedrock Player Violations
+```java
+List<String> bedrockViolations = DolphinAPI.getBedrockPlayerViolations(player.getUniqueId().toString());
 ```
 
 ## Available Events
@@ -149,3 +161,4 @@ public void onBedrockViolation(DolphinBedrockViolationEvent event) {
         player.sendMessage("Your action has been blocked due to high violation level.");
     }
 }
+```

@@ -10,169 +10,189 @@ import java.util.Optional;
 public final class DolphinAPI {
 
     private DolphinAPI() {
-        // Private constructor to prevent instantiation
+        // Prevent instantiation
     }
 
+    // Anti-Cheat System
     /**
      * Checks if the anti-cheat system is enabled.
-     * @return current state of the anti-cheat
+     * @return true if the anti-cheat is enabled, false otherwise
      */
     public static boolean isAnticheatEnabled() {
         return false;
     }
 
     /**
-     * Sets the state of the anti-cheat system.
-     * @param enabled state to set
+     * Enables or disables the anti-cheat system.
+     * @param enabled true to enable, false to disable
      */
     public static void setAnticheatEnabled(boolean enabled) {
-        // Actual implementation required
+        // Implement functionality
     }
 
+    // Player Information
     /**
-     * Gets the transaction ping of a player.
-     * @param player player to query
-     * @return transaction ping or -1 if unavailable
+     * Retrieves the ping of the player.
+     * @param player the player to query
+     * @return the player's ping or -1 if unavailable
      */
-    public static int getTransactionPing(final Player player) {
+    public static int getPing(Player player) {
         return -1;
     }
 
     /**
-     * Gets the keep-alive ping of a player.
-     * @param player player to query
-     * @return keep-alive ping or -1 if unavailable
-     */
-    public static int getKeepAlivePing(final Player player) {
-        return -1;
-    }
-
-    /**
-     * Checks if a player is experiencing lag.
-     * @param player player to check
+     * Checks if a player is lagging.
+     * @param player the player to check
      * @return true if the player is lagging, false otherwise
      */
-    public static boolean isLagging(final Player player) {
+    public static boolean isLagging(Player player) {
         return false;
     }
 
+    // Check States
     /**
      * Sets the state of a specific check.
-     * @param checkName name of the check
-     * @param enabled state to set
+     * @param checkName the name of the check
+     * @param enabled true to enable, false to disable
      */
-    public static void setCheckState(final String checkName, final boolean enabled) {
-        // Actual implementation required
+    public static void setCheckEnabled(String checkName, boolean enabled) {
+        // Implement functionality
     }
 
     /**
      * Sets the state of a specific check with type.
-     * @param checkName name of the check
-     * @param type type of check
-     * @param enabled state to set
+     * @param checkName the name of the check
+     * @param type the type of check
+     * @param enabled true to enable, false to disable
      */
-    public static void setCheckState(final String checkName, final String type, final boolean enabled) {
-        // Actual implementation required
+    public static void setCheckEnabled(String checkName, String type, boolean enabled) {
+        // Implement functionality
     }
 
+    // Configuration
     /**
      * Reloads the system configuration.
      */
     public static void reloadConfig() {
-        // Actual implementation required
+        // Implement functionality
     }
 
+    // Version Info
     /**
-     * Gets the current version of the plugin.
-     * @return plugin version or null if unavailable
+     * Retrieves the current version of the plugin.
+     * @return the plugin version or null if unavailable
      */
-    public static String getVersion() {
+    public static String getPluginVersion() {
         return null;
     }
 
     /**
-     * Gets the server version.
-     * @return server version or null if unavailable
+     * Retrieves the server version.
+     * @return the server version or null if unavailable
      */
     public static String getServerVersion() {
         return null;
     }
 
+    // Player Exemptions
     /**
-     * Exempts a player from checks for a specific period.
-     * @param player player to exempt
-     * @param ticks duration of exemption in ticks
+     * Exempts a player from checks for a specific duration.
+     * @param player the player to exempt
+     * @param durationTicks the duration of exemption in ticks
      */
-    public static void exemptPlayer(final Player player, final int ticks) {
-        // Actual implementation required
+    public static void exemptPlayer(Player player, int durationTicks) {
+        // Implement functionality
     }
 
     /**
-     * Removes exemption from a player.
-     * @param player player to reset
+     * Removes any exemptions for a player.
+     * @param player the player to reset
      */
-    public static void resetExempt(final Player player) {
-        // Actual implementation required
+    public static void resetExempt(Player player) {
+        // Implement functionality
     }
 
+    // Cloud Data
     /**
-     * Gets the list of bans in a banwave from the cloud.
-     * @return unmodifiable list of bans or empty list if no data
+     * Retrieves the list of bans in a banwave from the cloud.
+     * @return an unmodifiable list of ban IDs, or an empty list if no data
      */
-    public static List<String> getBanwaveFromCloud() {
+    public static List<String> getBanwave() {
         return Collections.emptyList();
     }
 
     /**
-     * Gets logs for a player from the cloud.
-     * @param playerUUID UUID of the player
-     * @return map of logs or empty map if no data
+     * Retrieves the logs for a player from the cloud.
+     * @param playerUUID the UUID of the player
+     * @return a map of log entries, or an empty map if no data
      */
-    public static Map<String, Integer> getLogsFromCloud(final String playerUUID) {
+    public static Map<String, Integer> getPlayerLogs(String playerUUID) {
         return Collections.emptyMap();
     }
 
     /**
-     * Gets information about a specific ban.
-     * @param banID identifier of the ban
-     * @return ban information wrapped in an Optional
+     * Retrieves information about a specific ban from the cloud.
+     * @param banID the identifier of the ban
+     * @return an Optional containing the ban information, or empty if not found
      */
-    public static Optional<String> getBanInformation(final String banID) {
+    public static Optional<String> getBanInfo(String banID) {
         return Optional.empty();
     }
 
+    // Triggers
     /**
      * Calls a specific trigger for a player.
-     * @param ID identifier of the trigger
-     * @param player target player
+     * @param triggerID the identifier of the trigger
+     * @param player the target player
      */
-    public static void callSpecificTrigger(final long ID, final Player player) {
-        // Actual implementation required
-    }
-
-    /**
-     * Sets the notification state for a player.
-     * @param player target player
-     * @param notifications state to set
-     */
-    public static void setNotificationState(final Player player, final boolean notifications) {
-        // Actual implementation required
-    }
-
-    /**
-     * Sets the alert state for a player.
-     * @param player target player
-     * @param alerts state to set
-     */
-    public static void setAlertState(final Player player, final boolean alerts) {
-        // Actual implementation required
+    public static void triggerForPlayer(long triggerID, Player player) {
+        // Implement functionality
     }
 
     /**
      * Calls a specific global trigger.
-     * @param ID identifier of the trigger
+     * @param triggerID the identifier of the trigger
      */
-    public static void callSpecificTrigger(final long ID) {
-        // Actual implementation required
+    public static void triggerGlobal(long triggerID) {
+        // Implement functionality
+    }
+
+    // Notifications and Alerts
+    /**
+     * Sets the notification state for a player.
+     * @param player the target player
+     * @param enable true to enable notifications, false to disable
+     */
+    public static void setPlayerNotifications(Player player, boolean enable) {
+        // Implement functionality
+    }
+
+    /**
+     * Sets the alert state for a player.
+     * @param player the target player
+     * @param enable true to enable alerts, false to disable
+     */
+    public static void setPlayerAlerts(Player player, boolean enable) {
+        // Implement functionality
+    }
+
+    // Bedrock Support
+    /**
+     * Checks if a player is using Bedrock Edition.
+     * @param player the player to check
+     * @return true if the player is on Bedrock Edition, false otherwise
+     */
+    public static boolean isBedrockPlayer(Player player) {
+        // Implement functionality to check if player is Bedrock
+        return false;
+    }
+
+    /**
+     * Retrieves a list of Bedrock player violations from the cloud.
+     * @param playerUUID the UUID of the Bedrock player
+     * @return a list of violation IDs or an empty list if no data
+     */
+    public static List<String> getBedrockPlayerViolations(String playerUUID) {
+        return Collections.emptyList();
     }
 }
