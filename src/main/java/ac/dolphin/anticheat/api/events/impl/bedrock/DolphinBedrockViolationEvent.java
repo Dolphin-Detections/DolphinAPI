@@ -1,10 +1,19 @@
-package me.astrix.dolphin.api.events.impl;
+package ac.dolphin.anticheat.api.events.impl.bedrock;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import me.astrix.dolphin.api.events.DolphinEvent;
+import ac.dolphin.anticheat.api.events.DolphinEvent;
 import org.bukkit.entity.Player;
+
+/**
+ * This project can't be redistributed without
+ * authorization of the developer
+ *
+ * @author Watschin © 2025
+ * @project DolphinAPI
+ * @date 01/04/2025
+ */
 
 @Getter
 @RequiredArgsConstructor

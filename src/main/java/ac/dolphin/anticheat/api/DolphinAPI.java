@@ -1,4 +1,4 @@
-package me.astrix.dolphin.api;
+package ac.dolphin.anticheat.api;
 
 import org.bukkit.entity.Player;
 
@@ -7,18 +7,22 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * This project can't be redistributed without
+ * authorization of the developer
+ *
+ * @author Watschin © 2025
+ * @project DolphinAPI
+ * @date 01/04/2025
+ */
+
 public final class DolphinAPI {
 
-    private DolphinAPI() {
-        // Prevent instantiation
-    }
-
-    // Anti-Cheat System
     /**
      * Checks if the anti-cheat system is enabled.
      * @return true if the anti-cheat is enabled, false otherwise
      */
-    public static boolean isAnticheatEnabled() {
+    public static boolean isAntiCheatEnabled() {
         return false;
     }
 
@@ -26,8 +30,8 @@ public final class DolphinAPI {
      * Enables or disables the anti-cheat system.
      * @param enabled true to enable, false to disable
      */
-    public static void setAnticheatEnabled(boolean enabled) {
-        // Implement functionality
+    public static void setAntiCheatEnabled(boolean enabled) {
+
     }
 
     // Player Information
@@ -56,7 +60,7 @@ public final class DolphinAPI {
      * @param enabled true to enable, false to disable
      */
     public static void setCheckEnabled(String checkName, boolean enabled) {
-        // Implement functionality
+
     }
 
     /**
@@ -66,7 +70,7 @@ public final class DolphinAPI {
      * @param enabled true to enable, false to disable
      */
     public static void setCheckEnabled(String checkName, String type, boolean enabled) {
-        // Implement functionality
+
     }
 
     // Configuration
@@ -74,7 +78,7 @@ public final class DolphinAPI {
      * Reloads the system configuration.
      */
     public static void reloadConfig() {
-        // Implement functionality
+
     }
 
     // Version Info
@@ -101,7 +105,7 @@ public final class DolphinAPI {
      * @param durationTicks the duration of exemption in ticks
      */
     public static void exemptPlayer(Player player, int durationTicks) {
-        // Implement functionality
+
     }
 
     /**
@@ -109,7 +113,7 @@ public final class DolphinAPI {
      * @param player the player to reset
      */
     public static void resetExempt(Player player) {
-        // Implement functionality
+
     }
 
     // Cloud Data
@@ -117,7 +121,7 @@ public final class DolphinAPI {
      * Retrieves the list of bans in a banwave from the cloud.
      * @return an unmodifiable list of ban IDs, or an empty list if no data
      */
-    public static List<String> getBanwave() {
+    public static List<String> getBanWave() {
         return Collections.emptyList();
     }
 
@@ -146,7 +150,7 @@ public final class DolphinAPI {
      * @param player the target player
      */
     public static void triggerForPlayer(long triggerID, Player player) {
-        // Implement functionality
+
     }
 
     /**
@@ -154,7 +158,7 @@ public final class DolphinAPI {
      * @param triggerID the identifier of the trigger
      */
     public static void triggerGlobal(long triggerID) {
-        // Implement functionality
+
     }
 
     // Notifications and Alerts
@@ -164,7 +168,7 @@ public final class DolphinAPI {
      * @param enable true to enable notifications, false to disable
      */
     public static void setPlayerNotifications(Player player, boolean enable) {
-        // Implement functionality
+
     }
 
     /**
@@ -173,17 +177,15 @@ public final class DolphinAPI {
      * @param enable true to enable alerts, false to disable
      */
     public static void setPlayerAlerts(Player player, boolean enable) {
-        // Implement functionality
+
     }
 
-    // Bedrock Support
     /**
      * Checks if a player is using Bedrock Edition.
      * @param player the player to check
      * @return true if the player is on Bedrock Edition, false otherwise
      */
     public static boolean isBedrockPlayer(Player player) {
-        // Implement functionality to check if player is Bedrock
         return false;
     }
 

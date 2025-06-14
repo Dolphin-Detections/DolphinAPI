@@ -1,10 +1,19 @@
-package me.astrix.dolphin.api.events;
+package ac.dolphin.anticheat.api.events;
 
 import org.bukkit.Bukkit;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
 import java.lang.reflect.Field;
+
+/**
+ * This project can't be redistributed without
+ * authorization of the developer
+ *
+ * @author Watschin © 2025
+ * @project DolphinAPI
+ * @date 01/04/2025
+ */
 
 public class DolphinEvent extends Event {
 
